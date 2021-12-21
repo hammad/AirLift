@@ -11,10 +11,10 @@ class ProductRemoteDataSource (
     suspend fun fetchLatestProducts(): List<Product> =
 
         withContext(ioDispatcher) {
-            productApi.fetchLatestNews()
+            productApi.fetchLatestProducts()
         }
 }
 
 interface ProductApi {
-    fun fetchLatestNews(): List<Product>
+    fun fetchLatestProducts(): List<Product>
 }

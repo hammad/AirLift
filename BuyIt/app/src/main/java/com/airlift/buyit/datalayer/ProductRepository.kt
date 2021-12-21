@@ -15,6 +15,10 @@ class ProductRepository (
     // Cache of the latest products got from the network.
     private var latestProducts: List<Product> = emptyList()
 
+    init {
+
+    }
+
     suspend fun getLatestProducts(refresh: Boolean = false): List<Product> {
         if (refresh || latestProducts.isEmpty()) {
             val networkResult = remoteDataSource.fetchLatestProducts()
